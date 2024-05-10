@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 url = "https://www.wunderground.com/weather/us/ny/bayport/"
 
-input = "2024-05-04"
+input = "2024-05-10"
 today = date.today()
 tomorrow = today + timedelta(days=1)
 
@@ -24,13 +24,14 @@ if input == str(today):
     blurb = soup.findAll('div', attrs={'class': 'columns small-6 medium-12'})
 
     blurb = blurb[1].text
-    percent, amount, high, wind = blurb.split(". ")
+    #print(blurb)
+    percent, amount, high, wind = blurb.split(". ", 3)
     percent = percent.split(" ")
     amount = amount.split("°")
     wind = wind[0].lower() + wind[1:]
     hilo = hilo.split(" | ")
 
-    print(f"The current temperature is {temperature}. The high is {hilo[0]} and the low is {hilo[1]}. The chance of rain is {percent[0]}. The amount of rain today is {amount[0].replace("/ ", "").strip()} inches. Current {wind.replace("winds ", "winds are ")} ")
+    print(f"The current temperature is {temperature}. The high is {hilo[0]} and the low is {hilo[1]}. The chance of rain is {percent[0]}. The amount of rain today is {amount[0].replace('/ ', '').strip()} inches. Current {wind.replace('winds ', 'winds are ')} ")
 
 elif input == str(tomorrow):
     next = soup.findAll('div', attrs={'class': 'hook'})
