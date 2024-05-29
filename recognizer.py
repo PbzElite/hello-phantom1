@@ -2,7 +2,7 @@ string = "the weather is great january fourteenth"
 words = string.split(' ')
 
 for i in range(len(words)):
-    if words[i] == "weather" or words[i] == "calendar":
+    if words[i] == "weather" or words[i] == "temperature" or words[i] == "calendar" or words[i] == "events" or words[i] == "announcements":
         prompt = words[i]
         break
     else:
