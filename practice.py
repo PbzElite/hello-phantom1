@@ -38,5 +38,38 @@ elif input == str(tomorrow):
     next = next[0]
     print(f"{next}")
 
-    
+'''
+#Added the events of a calendar, requires some tweaking
+# URL of the events page
+url = "https://www.bbpschools.org/o/bbphs/events"
+input = "What are the recent events"
 
+# Send a GET request to the webpage
+response = requests.get(url)
+
+# Check if the request was successful
+if input.find("event") && response.status_code == 200:
+    # Parse the HTML content of the page
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Find the container that holds the events
+    events_container = soup.find_all('div', class_='events-container')  # Adjust the class based on the actual HTML structure
+    print(events_container)
+    
+    # Iterate over each event and extract relevant details
+    for event in events_container:
+        title = event.find('div', class_='title').text.strip() if event.find('div', class_='title') else 'No Title'
+        date = event.find('div', class_='month').text.strip() if event.find('div', class_='month') else 'No Date'
+        date += " " + event.find('div', class_='day').text.strip() if event.find('div', class_='day') else 'No Date'
+        time = event.find('div', class_='hour').text.strip() if event.find('div', class_='hour') else 'No Time'
+        location = event.find('div', class_='venue').text.strip() if event.find('div', class_='venue') else 'No Location'
+
+        # Print the extracted details
+        print(f"Title: {title}")
+        print(f"Date: {date}")
+        print(f"Time: {time}")
+        print(f"Location: {location}")
+        print("-" * 40)
+else:
+    print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
+'''
