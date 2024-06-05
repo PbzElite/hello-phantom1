@@ -53,93 +53,20 @@ class HelloPhantom:
             else:
                 self.date = datetime.date.today()
             
-            if month == "january":
-                monthNum = 1
-            elif month == "february":
-                monthNum = 2
-            elif month == "march":
-                monthNum = 3
-            elif month == "april":
-                monthNum = 4
-            elif month == "may":
-                monthNum = 5
-            elif month == "june":
-                monthNum = 6
-            elif month == "july":
-                monthNum = 7
-            elif month == "august":
-                monthNum = 8
-            elif month == "september":
-                monthNum = 9
-            elif month == "october":
-                monthNum = 10
-            elif month == "november":
-                monthNum = 11
-            elif month == "december":
-                monthNum = 12
-                
-            if day == "first":
-                dayNum = 1
-            elif day == "second":
-                dayNum = 2
-            elif day == "third":
-                dayNum = 3
-            elif day == "fourth":
-                dayNum = 4
-            elif day == "fifth":
-                dayNum = 5
-            elif day == "sixth":
-                dayNum = 6
-            elif day == "seventh":
-                dayNum = 7
-            elif day == "eighth":
-                dayNum = 8
-            elif day == "ninth":
-                dayNum = 9
-            elif day == "tenth":
-                dayNum = 10
-            elif day == "eleventh":
-                dayNum = 11
-            elif day == "twelfth":
-                dayNum = 12
-            elif day == "thirteenth":
-                dayNum = 13
-            elif day == "fourteenth":
-                dayNum = 14
-            elif day == "fifteenth":
-                dayNum = 15
-            elif day == "sixteenth":
-                dayNum = 16
-            elif day == "seventeenth":
-                dayNum = 17
-            elif day == "eighteenth":
-                dayNum = 18
-            elif day == "nineteenth":
-                dayNum = 19
-            elif day == "twentieth":
-                dayNum = 20
-            elif day == "twenty-first":
-                dayNum = 21
-            elif day == "twenty-second":
-                dayNum = 22
-            elif day == "twenty-third":
-                dayNum = 23
-            elif day == "twenty-fourth":
-                dayNum = 24
-            elif day == "twenty-fifth":
-                dayNum = 25
-            elif day == "twenty-sixth":
-                dayNum = 26
-            elif day == "twenty-seventh":
-                dayNum = 27
-            elif day == "twenty-eighth":
-                dayNum = 28
-            elif day == "twenty-ninth":
-                dayNum = 29
-            elif day == "thirtieth":
-                dayNum = 30
-            elif day == "thirty-first":
-                dayNum = 31
+            monthArr = ["january","february","march","april","may","june","july","august","september","october","november","december"]
+            dayArr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 
+                    'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 
+                    'eighteen', 'nineteen', 'twenty', 'twenty-one', 'twenty-two', 'twenty-three', 
+                    'twenty-four', 'twenty-five', 'twenty-six', 'twenty-seven', 'twenty-eight', 
+                    'twenty-nine', 'thirty', 'thirty-one']
+
+            for i in range(len(monthArr)):
+                if month == monthArr[i]:
+                    monthNum = i + 1
+
+            for i in range(len(dayArr)):
+                if day == dayArr[i]:
+                    dayNum = i + 1
             
             current = datetime.date.today() 
             self.date = (current.year, monthNum, dayNum)
