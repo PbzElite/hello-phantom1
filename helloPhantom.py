@@ -54,11 +54,11 @@ class HelloPhantom:
                 self.date = datetime.date.today()
             
             monthArr = ["january","february","march","april","may","june","july","august","september","october","november","december"]
-            dayArr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 
-                    'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 
-                    'eighteen', 'nineteen', 'twenty', 'twenty-one', 'twenty-two', 'twenty-three', 
-                    'twenty-four', 'twenty-five', 'twenty-six', 'twenty-seven', 'twenty-eight', 
-                    'twenty-nine', 'thirty', 'thirty-one']
+            dayArr = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 
+                    'eleventh', 'twelfth', 'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth', 
+                    'eighteenth', 'nineteenth', 'twentieth', 'twenty-first', 'twenty-second', 'twenty-third', 
+                    'twenty-fourth', 'twenty-fifth', 'twenty-sixth', 'twenty-seventh', 'twenty-eighth', 
+                    'twenty-ninth', 'thirtieth', 'thirty-first']
 
             for i in range(len(monthArr)):
                 if month == monthArr[i]:
