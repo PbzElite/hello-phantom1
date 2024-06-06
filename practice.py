@@ -47,14 +47,14 @@ input = "What are the recent events"
 # Send a GET request to the webpage
 response = requests.get(url)
 
-# Check if the request was successful
-if input.find("event") && response.status_code == 200:
+# Check if the request was successful and see if the input is asking for events
+if input.find("event") != -1 and response.status_code == 200:
     # Parse the HTML content of the page
     soup = BeautifulSoup(response.text, 'html.parser')
 
     # Find the container that holds the events
-    events_container = soup.find_all('div', class_='events-container')  # Adjust the class based on the actual HTML structure
-    print(events_container)
+    events_container = soup.find_all('div', class_='event-list-item')  # Adjust the class based on the actual HTML structure
+    #print(events_container)
     
     # Iterate over each event and extract relevant details
     for event in events_container:
