@@ -68,7 +68,7 @@ if input.find("event") != -1 and response.status_code == 200:
         print(f"Title: {title}")
         print(f"Date: {date}")
         print(f"Time: {time}")
-        print(f"Location: {location}")
+        print(f"Location: {location}") if location.strip() != "" else print("")
         print("-" * 40)
 else:
     print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
