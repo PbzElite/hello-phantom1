@@ -57,7 +57,7 @@ if input.find("event") != -1 and response.status_code == 200:
     #print(events_container)
     
     # Iterate over each event and extract relevant details
-    for event in events_container:
+    for event in events_container[:3]:
         title = event.find('div', class_='title').text.strip() if event.find('div', class_='title') else 'No Title'
         date = event.find('div', class_='month').text.strip() if event.find('div', class_='month') else 'No Date'
         date += " " + event.find('div', class_='day').text.strip() if event.find('div', class_='day') else 'No Date'
