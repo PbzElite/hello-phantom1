@@ -55,6 +55,10 @@ if input.find("event") != -1 and response.status_code == 200:
     # Find the container that holds the events
     events_container = soup.find_all('div', class_='event-list-item')  # Adjust the class based on the actual HTML structure
     #print(events_container)
+
+    #working on this
+
+    recentEvents = []
     
     # Iterate over each event and extract relevant details
     for event in events_container[:3]:
@@ -64,6 +68,8 @@ if input.find("event") != -1 and response.status_code == 200:
         time = event.find('div', class_='hour').text.strip() if event.find('div', class_='hour') else 'No Time'
         location = event.find('div', class_='venue').text.strip() if event.find('div', class_='venue') else 'No Location'
 
+        #make a class for event
+
         # Print the extracted details
         print(f"Title: {title}")
         print(f"Date: {date}")
@@ -72,4 +78,6 @@ if input.find("event") != -1 and response.status_code == 200:
         print("-" * 40)
 else:
     print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
+for event in recentEvents:
+    print(f"Current events include:" {title} "on " {date} "at " {time})
 '''
