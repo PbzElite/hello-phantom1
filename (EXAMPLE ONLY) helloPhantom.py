@@ -1,3 +1,6 @@
+#Discontinued program meant to run all functions from the other files
+#It has been correctly implemented on the Raspberry Pi via running the files in one directory, importing them as methods
+
 import speech_recognition as sr
 from text_to_speech import save
 import datetime
@@ -5,12 +8,14 @@ import requests
 from bs4 import BeautifulSoup
 
 class HelloPhantom:
-    
+
+    #Constructor I think (idk I don't know python too well)
     def __init__(self, prompt, date, text):
         self.prompt = ""
         self.date = ""
         self.text = "january first"
-        
+
+    #Uses Vosk speech recognition and an offline language model to transcribe speech
     def stt():
         # obtain audio from the microphone
         r = sr.Recognizer()
@@ -24,13 +29,7 @@ class HelloPhantom:
         except sr.UnknownValueError:
             print("what are you doing")
 
-    def tts():
-        text = "Hello"
-        language = "en"  # Specify the language (IETF language tag)
-        output_file = "output.mp3"  # Specify the output file (only accepts .mp3)
-
-        save(text, language, file=output_file)
-        
+    #logic portion of code, takes in the transcribed text and looks for key words
     def recognizer():
         string = self.text
         words = string.split(' ')
@@ -80,6 +79,7 @@ class HelloPhantom:
             elif time == "tomorrow":
                 self.date = datetime.date.today() + datetime.timedelta(days=1)
 
+    #webscraper, gets information from websites
     def webscraper():
 
         url = "https://www.wunderground.com/weather/us/ny/bayport/"
@@ -117,3 +117,19 @@ class HelloPhantom:
             next = soup.findAll('div', attrs={'class': 'hook'})
             next = next[0]
             print(f"{next}")
+
+    #Uses an offline text-to-speech library and saves it as a .mp3 file (can be played with a later playsound call from playsound3)
+    def tts():
+        text = "Hello"
+        language = "en"  # Specify the language (IETF language tag)
+        output_file = "output.mp3"  # Specify the output file (only accepts .mp3)
+
+        save(text, language, file=output_file)
+
+
+#Finished product would look something along the lines of (current methods don't have arguments nor return statements, these are conceptual):
+#input = stt()
+#intent = recognizer(input)
+#result = webscrape(intent)
+#tts(result)
+
