@@ -17,6 +17,11 @@ html = requests.get(url).content
 
 soup = BeautifulSoup(html, 'html.parser')
 
+#creates an array of all <p> tags on the webpage
+ps = soup.find_all('p')
+#the 7th <p> contains current weather, so take its text
+print(ps[7].text)
+
 # print(soup.prettify())
 
 if input == str(today):
