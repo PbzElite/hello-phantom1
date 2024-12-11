@@ -1,4 +1,4 @@
-<b>This is the final copy. Everything put here must be considered 'good-to-run', and the corresponding 'final' folder on the Raspberry Pi will be updated to match.</b>
+<b>This is the final copy. Everything put here must be considered good-to-run, and the corresponding 'final' folder on the Raspberry Pi will be updated to match.</b>
 
 .py files:
 <ul>
